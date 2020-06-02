@@ -8,6 +8,16 @@
   </div>
 </template>
 
+<script>
+export default {
+  created() {
+    if (!localStorage.getItem(this.$localStorageKeys.modeKey)) {
+      localStorage.setItem(this.$localStorageKeys.modeKey, 'DEFAULT');
+    }
+  },
+};
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
