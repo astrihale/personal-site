@@ -7,7 +7,6 @@ cache: npm
 script: npm run build
 
 deploy:
-  if: branch = master
   provider: pages
   skip_cleanup: true
   github_token: $GH_REPO_TOKEN
