@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "node"
+
+cache: npm
+
+script: npm run build
+
+deploy:
+  if: branch = master
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_REPO_TOKEN
+  local_dir: dist
+  on:
+    branch: master
