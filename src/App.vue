@@ -1,9 +1,14 @@
 <template>
   <div id="app">
-    <div class="md-layout md-alignment-center-center" id="nav">
-      <router-link class="md-layout-item" to="/">Home</router-link>
-      <router-link class="md-layout-item" to="/about">About</router-link>
-      <md-switch class="md-layout-item"
+    <div class="md-layout md-flexible md-alignment-center" id="nav">
+      <router-link to="/" class="md-layout-item md-size-25">
+        Astrihale
+      </router-link>
+      <router-link class="md-layout-item md-size-25"
+                   to="/about">
+        About
+      </router-link>
+      <md-switch class="md-size-25"
                  @change="modeSwitch" v-model="mode" id="mode-switcher"></md-switch>
     </div>
     <router-view/>
@@ -48,29 +53,25 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+  }
 
-.app-light {
-  background-color: #ededed;
-  color: #1f1f1f;
-}
+  .app-light {
+    background-color: #ededed;
+    color: #1f1f1f;
+  }
 
-.app-dark {
-  background-color: #1f1f1f;
-  color: #ededed;
-}
+  .app-dark {
+    background-color: #1f1f1f;
+    color: #ededed;
+  }
 
-#nav {
-  padding: 10px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: orangered;
-}
+  #nav a {
+    font-weight: bold;
+    color: orangered;
+  }
 </style>
