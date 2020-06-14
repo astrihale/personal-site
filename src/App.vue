@@ -2,7 +2,7 @@
   <div id="app">
     <div class="md-layout md-flexible md-alignment-center" id="nav">
       <router-link to="/" class="md-layout-item md-size-25">
-        Astrihale
+        Home
       </router-link>
       <router-link class="md-layout-item md-size-25"
                    to="/about">
@@ -12,6 +12,10 @@
                  @change="modeSwitch" v-model="mode" id="mode-switcher"></md-switch>
     </div>
     <router-view/>
+    <md-bottom-bar id="footer" md-type="fixed" class="md-layout-item">
+      Copyright <a href="https://github.com/astrihale/personal-site/blob/master/LICENSE">MIT</a> ©
+      2020 | Nenad Vuletic
+    </md-bottom-bar>
   </div>
 </template>
 
@@ -73,5 +77,17 @@ export default {
   #nav a {
     font-weight: bold;
     color: orangered;
+  }
+
+  #footer a {
+    color: orangered;
+  }
+
+  #footer {
+    width: 100%;
+    padding: 3%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
   }
 </style>
