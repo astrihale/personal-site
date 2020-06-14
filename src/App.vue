@@ -8,8 +8,14 @@
                    to="/about">
         About
       </router-link>
-      <md-switch class="md-size-25"
-                 @change="modeSwitch" v-model="mode" id="mode-switcher"></md-switch>
+      <div>
+        <md-tooltip md-direction="right">
+          Switch between light/dark mode.
+        </md-tooltip>
+        <md-switch class="md-size-25"
+                   @change="modeSwitch" v-model="mode" id="mode-switcher">
+        </md-switch>
+      </div>
     </div>
     <router-view/>
     <md-bottom-bar id="footer" md-type="fixed" class="md-layout-item">
