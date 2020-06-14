@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <a class="md-layout" href="https://github.com/astrihale">
+    <a href="https://github.com/astrihale">
       <md-avatar id="my-avatar md-layout-item" class="md-large">
         <img id="avatar"
              src="https://avatars0.githubusercontent.com/u/23716815?s=460&u=4e0f93bbf2b2c8c5d3529dc9ac72be2c688a3e8a&v=4"
