@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="md-layout md-flexible md-alignment-center dark-fade" id="nav">
+    <div class="md-layout md-flexible md-alignment-center" id="nav">
       <router-link to="/" class="md-layout-item md-size-25">
         <md-button>
           Home
@@ -16,13 +16,13 @@
         <md-tooltip md-direction="right">
           Switch between light/dark mode.
         </md-tooltip>
-        <md-switch class="md-size-25" disabled="true"
+        <md-switch class="md-size-25"
                    @change="modeSwitch" v-model="mode" id="mode-switcher">
         </md-switch>
       </div>
     </div>
     <router-view id="main"/>
-    <md-bottom-bar id="footer" md-type="fixed" class="md-layout-item dark-fade">
+    <md-bottom-bar id="footer" md-type="fixed" class="md-layout-item">
       Copyright <a href="https://github.com/astrihale/personal-site/blob/master/LICENSE">MIT</a> ©
       2020 | Nenad Vuletic
     </md-bottom-bar>
@@ -35,12 +35,12 @@ const modeKey = 'agi-mode';
 export default {
   data() {
     return {
-      mode: true,
+      mode: false,
     };
   },
   created() {
     if (!localStorage.getItem(modeKey)) {
-      localStorage.setItem(modeKey, 'dark');
+      localStorage.setItem(modeKey, 'light');
     } else {
       this.mode = localStorage.getItem(modeKey) === 'dark';
       this.modeSwitch();
@@ -71,25 +71,17 @@ export default {
   }
 
   .app-light {
-    background-color: #ededed;
+    background-color: rgba(237, 237, 237, 0.75);
     background-image: url("assets/logo-light.png");
     background-size: 88px;
     color: #1f1f1f;
   }
 
   .app-dark {
-    background-color: #1f1f1f;
+    background-color: rgba(33, 33, 33, 0.75);
     background-image: url("assets/logo-dark.png");
     background-size: 88px;
     color: #ededed;
-  }
-
-  .light-fade {
-    background-color: rgba(255, 255, 255, 0.75);
-  }
-
-  .dark-fade {
-    background-color: rgba(0, 0, 0, 0.75);
   }
 
   #nav a {
