@@ -1,24 +1,28 @@
 <template>
   <div id="app">
-    <div class="md-layout md-flexible md-alignment-center" id="nav">
+    <div class="md-layout md-flexible md-alignment-center dark-fade" id="nav">
       <router-link to="/" class="md-layout-item md-size-25">
-        Home
+        <md-button>
+          Home
+        </md-button>
       </router-link>
       <router-link class="md-layout-item md-size-25"
                    to="/about">
-        About
+        <md-button>
+          About
+        </md-button>
       </router-link>
       <div>
         <md-tooltip md-direction="right">
           Switch between light/dark mode.
         </md-tooltip>
-        <md-switch class="md-size-25"
+        <md-switch class="md-size-25" disabled="true"
                    @change="modeSwitch" v-model="mode" id="mode-switcher">
         </md-switch>
       </div>
     </div>
-    <router-view/>
-    <md-bottom-bar id="footer" md-type="fixed" class="md-layout-item">
+    <router-view id="main"/>
+    <md-bottom-bar id="footer" md-type="fixed" class="md-layout-item dark-fade">
       Copyright <a href="https://github.com/astrihale/personal-site/blob/master/LICENSE">MIT</a> ©
       2020 | Nenad Vuletic
     </md-bottom-bar>
@@ -31,19 +35,15 @@ const modeKey = 'agi-mode';
 export default {
   data() {
     return {
-      mode: false,
+      mode: true,
     };
   },
   created() {
     if (!localStorage.getItem(modeKey)) {
-      localStorage.setItem(modeKey, 'light');
+      localStorage.setItem(modeKey, 'dark');
     } else {
       this.mode = localStorage.getItem(modeKey) === 'dark';
-      if (this.mode) {
-        document.body.classList.add('app-dark');
-      } else {
-        document.body.classList.add('app-light');
-      }
+      this.modeSwitch();
     }
   },
   methods: {
@@ -72,12 +72,24 @@ export default {
 
   .app-light {
     background-color: #ededed;
+    background-image: url("assets/logo-light.png");
+    background-size: 88px;
     color: #1f1f1f;
   }
 
   .app-dark {
     background-color: #1f1f1f;
+    background-image: url("assets/logo-dark.png");
+    background-size: 88px;
     color: #ededed;
+  }
+
+  .light-fade {
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+
+  .dark-fade {
+    background-color: rgba(0, 0, 0, 0.75);
   }
 
   #nav a {
@@ -85,15 +97,15 @@ export default {
     color: orangered;
   }
 
-  #footer a {
-    color: orangered;
-  }
-
   #footer {
     width: 100%;
-    padding: 3%;
+    padding: 1% 3%;
     position: fixed;
     left: 0;
     bottom: 0;
+  }
+
+  #footer a {
+    color: orangered;
   }
 </style>
