@@ -1,0 +1,32 @@
+mat-toolbar {
+  height: auto;
+  padding: 0;
+  width: 100vw;
+}
+
+mat-icon {
+  color: red;
+}
+
+button {
+  background-color: black;
+  border-style: solid;
+  border-width: 3px;
+  border-color: red;
+}
+
+.bottom-bar-content {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(0.0, 0.0, 0.0);
+  border-style: solid;
+  border-width: 3px;
+  border-color: red;
+}
+
+.copyright-text {
+  color: red;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 12px;
+}

@@ -1,0 +1,10 @@
+<div class="bottom-bar">
+  <button mat-mini-fab color="primary" class="m-2" (click)="bar = !bar">
+    <mat-icon>{{bar ? 'expand_more' : 'expand_less'}}</mat-icon>
+  </button>
+  <mat-toolbar *ngIf="bar">
+    <div class="bottom-bar-content p-2">
+      <h6 class="copyright-text">Copyright 2022 © Ana Vuletic</h6>
+    </div>
+  </mat-toolbar>
+</div>
