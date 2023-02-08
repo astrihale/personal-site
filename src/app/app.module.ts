@@ -7,12 +7,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
 import {FooterComponent} from './common/footer/footer.component';
 import {HeaderComponent} from './common/header/header.component';
+import { LinksGridComponent } from './common/links-grid/links-grid.component';
+import { LinkButtonComponent } from './common/link-button/link-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    LinksGridComponent,
+    LinkButtonComponent
   ],
   imports: [
     BrowserModule,
