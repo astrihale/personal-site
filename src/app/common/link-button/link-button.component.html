@@ -1,3 +1,8 @@
-<div class="link-button">
-  Hello World!
-</div>
+<button mat-raised-button color="spotify" class="link-button"
+        [class.mat-elevation-z6]="!hovering"
+        [class.mat-elevation-z12]="hovering && !clicked"
+        [class.mat-elevation-z0]="clicked"
+        (mouseover)="hovering = true" (mouseout)="hovering = false"
+        (click)="buttonClicked()">
+  <img id="icon" src="assets/spotify.svg" alt="Spotify Icon">
+</button>
