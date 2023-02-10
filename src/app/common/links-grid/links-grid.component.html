@@ -1,3 +1,5 @@
 <mat-card class="links-grid">
-  <app-link-button></app-link-button>
+  <div *ngFor="let link of links">
+    <app-link-button [icon]="link.icon" [link]="link.link"></app-link-button>
+  </div>
 </mat-card>

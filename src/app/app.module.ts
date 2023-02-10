@@ -10,6 +10,7 @@ import {HeaderComponent} from './common/header/header.component';
 import { LinksGridComponent } from './common/links-grid/links-grid.component';
 import { LinkButtonComponent } from './common/link-button/link-button.component';
 import {MatLegacyButtonModule} from "@angular/material/legacy-button";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {MatLegacyButtonModule} from "@angular/material/legacy-button";
         BrowserAnimationsModule,
         MatCardModule,
         MatLegacyButtonModule,
+        MatTooltipModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
