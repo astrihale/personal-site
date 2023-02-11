@@ -21,11 +21,13 @@ export class LinkButtonComponent {
   public iconForOption(option: LinkButtonOption) {
     switch (option) {
       case LinkButtonOption.Spotify:
-        return "assets/spotify.svg";
+        return "assets/link-button-icons/spotify.svg";
       case LinkButtonOption.LinkedIn:
-        return "assets/linkedin.svg";
+        return "assets/link-button-icons/linkedin.svg";
       case LinkButtonOption.GitHub:
-        return "assets/github.svg";
+        return "assets/link-button-icons/github.svg";
+      case LinkButtonOption.LastFm:
+        return "assets/link-button-icons/lastfm.svg";
       default:
         return "";
     }
@@ -39,6 +41,8 @@ export class LinkButtonComponent {
         return "mat-linkedin";
       case LinkButtonOption.GitHub:
         return "mat-github";
+      case LinkButtonOption.LastFm:
+        return "mat-lastfm";
       default:
         return "";
     }
