@@ -1,0 +1,5 @@
+{
+    "apis": {
+        "spotify": "http://localhost:7689"
+    }
+}
