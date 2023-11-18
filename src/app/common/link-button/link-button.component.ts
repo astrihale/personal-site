@@ -28,6 +28,8 @@ export class LinkButtonComponent {
                 return "assets/link-button-icons/github.svg";
             case LinkButtonOption.LastFm:
                 return "assets/link-button-icons/lastfm.svg";
+            case LinkButtonOption.CV:
+                return "assets/link-button-icons/cv.svg"
             default:
                 return "";
         }
@@ -43,6 +45,8 @@ export class LinkButtonComponent {
                 return "mat-github";
             case LinkButtonOption.LastFm:
                 return "mat-lastfm";
+            case LinkButtonOption.CV:
+                return "mat-cv";
             default:
                 return "";
         }

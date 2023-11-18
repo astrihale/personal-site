@@ -3,5 +3,6 @@ export enum LinkButtonOption {
     Spotify,
     LinkedIn,
     GitHub,
-    LastFm
+    LastFm,
+    CV
 }
