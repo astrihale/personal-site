@@ -9,9 +9,6 @@ import {LinkButtonOption} from "../link-button/link-button-option";
 export class LinksGridComponent {
 
     links = [{
-        icon: LinkButtonOption.CV,
-        link: 'https://files.astrihale.me/raw//Ana%20Vuletic%CC%81%20CV.pdf'
-    }, {
         icon: LinkButtonOption.Spotify,
         link: 'https://open.spotify.com/user/0tbj5ef7bvxnmxx9iijsb34es?si=0b092e82fd284b78'
     }, {
