@@ -21,5 +21,4 @@ export class LinksGridComponent {
         icon: LinkButtonOption.GitHub,
         link: 'https://github.com/astrihale/'
     }];
-
 }
