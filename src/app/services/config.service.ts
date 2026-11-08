@@ -1,23 +1,29 @@
-import {Injectable, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {inject, Injectable, signal} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {firstValueFrom} from 'rxjs';
+
+import {MusicService} from './api-client';
 import {Config} from './config';
-import {MusicService} from "./api-client";
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class ConfigService {
-    config: Config | undefined;
+    private readonly http = inject(HttpClient);
+    private readonly musicService = inject(MusicService);
 
-    constructor(private http: HttpClient, private musicService: MusicService) {
-    }
+    private readonly _config = signal<Config | undefined>(undefined);
+    readonly config = this._config.asReadonly();
 
-    loadConfiguration() {
-        return this.http.get<Config>('assets/config.json')
-            .subscribe(data => {
-                console.log(data);
-                this.config = data;
-                this.musicService.basePath = this.config.apis.spotify;
-            });
+    /**
+     * Loads `assets/config.json` before the app starts. A failure is logged
+     * rather than thrown so a missing config can't stop the page rendering.
+     */
+    async loadConfiguration(): Promise<void> {
+        try {
+            const config = await firstValueFrom(this.http.get<Config>('assets/config.json'));
+            this._config.set(config);
+            this.musicService.basePath = config.apis.spotify;
+        } catch (err) {
+            console.error('Failed to load assets/config.json', err);
+        }
     }
 }
