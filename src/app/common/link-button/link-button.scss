@@ -1,0 +1,43 @@
+// Material elevation 6 at rest, 12 on hover, flat while the click animation plays.
+$elevation-6: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+$elevation-12: 0 7px 8px -4px rgba(0, 0, 0, .2), 0 12px 17px 2px rgba(0, 0, 0, .14), 0 5px 22px 4px rgba(0, 0, 0, .12);
+
+button {
+    --mat-button-protected-container-height: auto;
+    --mat-button-protected-horizontal-padding: 3ch;
+    --mat-button-protected-container-elevation-shadow: #{$elevation-6};
+    --mat-button-protected-focus-container-elevation-shadow: #{$elevation-6};
+    --mat-button-protected-hover-container-elevation-shadow: #{$elevation-12};
+    --mat-button-protected-pressed-container-elevation-shadow: none;
+    padding-block: 3ch;
+
+    &.clicked {
+        box-shadow: none;
+    }
+}
+
+.icon {
+    height: 6.5ch;
+}
+
+.mat-spotify {
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(14, 174, 87, 1) 0%, rgba(12, 116, 117, 1) 90%);
+}
+
+.mat-linkedin {
+    background: rgb(11, 72, 180);
+    background: linear-gradient(0deg, rgba(11, 72, 180, 1) 0%, rgba(45, 128, 218, 1) 100%);
+}
+
+.mat-github {
+    background-image: linear-gradient(99deg, rgba(115, 18, 81, 1) 10.6%, rgba(28, 28, 28, 1) 118%);
+}
+
+.mat-lastfm {
+    background-image: radial-gradient(circle 860px at 11.8% 33.5%, rgba(240, 30, 92, 1) 0%, rgba(244, 49, 74, 1) 30.5%, rgba(249, 75, 37, 1) 56.1%, rgba(250, 88, 19, 1) 75.6%, rgba(253, 102, 2, 1) 100.2%);
+}
+
+.mat-cv {
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+}

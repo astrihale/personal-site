@@ -1,0 +1,7 @@
+<button matButton="elevated"
+        [class]="style().themeClass"
+        [class.clicked]="clicked()"
+        (click)="buttonClicked()"
+        [matTooltip]="'My ' + style().label + ' Profile'">
+    <img class="icon" [src]="style().icon" alt="{{ style().label }} icon">
+</button>

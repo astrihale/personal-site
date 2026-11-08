@@ -3,5 +3,5 @@ export interface Apis {
 }
 
 export interface Config {
-    apis: Apis
+    apis: Apis;
 }
