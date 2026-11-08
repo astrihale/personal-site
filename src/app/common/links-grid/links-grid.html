@@ -1,7 +1,5 @@
-<mat-card class="links-grid">
+<mat-card appearance="outlined" class="links-grid">
     @for (link of links; track link.url) {
-        <div>
-            <app-link-button [option]="link.option" [link]="link.url"/>
-        </div>
+        <app-link-button [option]="link.option" [link]="link.url"/>
     }
 </mat-card>

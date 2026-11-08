@@ -1,11 +1,11 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {MatCard, MatCardSubtitle} from '@angular/material/card';
 
 @Component({
     selector: 'app-footer',
-    imports: [MatCard, MatCardSubtitle],
     templateUrl: './footer.html',
+    styleUrl: './footer.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Footer {
+    protected readonly year = new Date().getFullYear();
 }
