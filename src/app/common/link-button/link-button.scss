@@ -1,16 +1,19 @@
+// Material elevation 6 at rest, 12 on hover, flat while the click animation plays.
+$elevation-6: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+$elevation-12: 0 7px 8px -4px rgba(0, 0, 0, .2), 0 12px 17px 2px rgba(0, 0, 0, .14), 0 5px 22px 4px rgba(0, 0, 0, .12);
+
 button {
     --mat-button-protected-container-height: auto;
-    --mat-button-protected-container-shape: 16px;
+    --mat-button-protected-container-shape: 4px;
     --mat-button-protected-horizontal-padding: 3ch;
-    --mat-button-protected-container-elevation-shadow: var(--mat-sys-level2);
-    --mat-button-protected-focus-container-elevation-shadow: var(--mat-sys-level2);
-    --mat-button-protected-hover-container-elevation-shadow: var(--mat-sys-level4);
-    --mat-button-protected-pressed-container-elevation-shadow: var(--mat-sys-level0);
+    --mat-button-protected-container-elevation-shadow: #{$elevation-6};
+    --mat-button-protected-focus-container-elevation-shadow: #{$elevation-6};
+    --mat-button-protected-hover-container-elevation-shadow: #{$elevation-12};
+    --mat-button-protected-pressed-container-elevation-shadow: none;
     padding-block: 3ch;
 
-    // Stays flat for the short click animation before the link opens.
     &.clicked {
-        box-shadow: var(--mat-sys-level0);
+        box-shadow: none;
     }
 }
 
