@@ -20,7 +20,7 @@ export class LinksGrid {
     protected readonly links: readonly Link[] = [
         {option: 'spotify', url: 'https://open.spotify.com/user/0tbj5ef7bvxnmxx9iijsb34es?si=0b092e82fd284b78'},
         {option: 'lastfm', url: 'https://www.last.fm/user/Astrihale'},
-        {option: 'linkedin', url: 'https://www.linkedin.com/in/ana-vuleti%C4%87-963b35155/'},
+        {option: 'linkedin', url: 'https://www.linkedin.com/in/ana-v-963b35155/'},
         {option: 'github', url: 'https://github.com/astrihale/'},
     ];
 }
